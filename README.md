@@ -1,8 +1,8 @@
-# Twitch English
+# Twitch Translator
 
 A free Chrome extension for Helium that automatically adds English translations to Twitch chat. No API key, account, subscription, or build step is required. [Helium supports Chromium extensions](https://helium.computer/).
 
-## Install in Helium
+## Install in Helium/Chromium based browser
 
 1. Keep the extension files in a permanent folder. If using this source repository, use its `extension` folder.
 2. Open `chrome://extensions` in Helium.
