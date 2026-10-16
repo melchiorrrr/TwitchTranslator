@@ -1,0 +1,36 @@
+.tce-translation {
+  display: block;
+  margin: 3px 0 1px;
+  padding: 2px 0 2px 8px;
+  border-left: 2px solid #a78bfa;
+  color: inherit;
+  font: inherit;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  text-align: start;
+  white-space: pre-wrap;
+}
+.tce-language {
+  display: inline-block;
+  margin-right: 6px;
+  color: #a78bfa;
+  font: 600 9px/1.5 system-ui, sans-serif;
+  letter-spacing: .03em;
+  vertical-align: 1px;
+}
+.tce-original-button {
+  display: inline;
+  margin-left: 7px;
+  padding: 1px 3px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: inherit;
+  opacity: .65;
+  font: 10px/1.5 system-ui, sans-serif;
+  cursor: pointer;
+}
+.tce-original-button:hover, .tce-original-button:focus-visible { opacity: 1; text-decoration: underline; }
+.tce-original-button:focus-visible { outline: 2px solid #a78bfa; outline-offset: 2px; }
+.tce-original-hidden { display: none !important; }
+.tce-replace .tce-translation { border-left-color: #7dd3b0; }

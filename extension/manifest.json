@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Twitch English",
+  "version": "1.1.0",
+  "description": "Read Twitch chat in English. Fast, automatic translation with no account or API key.",
+  "minimum_chrome_version": "109",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://*.twitch.tv/*",
+    "https://twitch.tv/*",
+    "https://translate.googleapis.com/*"
+  ],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": {
+    "default_title": "Twitch English",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "content_scripts": [{
+    "matches": ["https://*.twitch.tv/*", "https://twitch.tv/*"],
+    "js": ["lib/content-core.js", "content.js"],
+    "css": ["content.css"],
+    "run_at": "document_idle",
+    "all_frames": true
+  }],
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'none'" }
+}

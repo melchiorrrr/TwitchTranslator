@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>Twitch English</title>
+    <link rel="stylesheet" href="popup.css" />
+    <script type="module" src="popup.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="header">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H10l-6 4V4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m8 12 2.5-5L13 12m-4.1-1.5h3.2M15 8h2m-1-1v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div><h1>Twitch English</h1><p class="subtitle">A little less lost in chat.</p></div>
+        <span class="free-badge">FREE</span>
+      </header>
+
+      <section class="enable-card" aria-label="Translation">
+        <label class="enable-label" for="enabled"><span class="heading">Translate Twitch chat</span><span class="muted">Other languages → English</span></label>
+        <label class="switch"><input type="checkbox" id="enabled" /><span class="switch-track" aria-hidden="true"></span><span class="sr-only">Enable translation</span></label>
+      </section>
+
+      <section class="channel-row" aria-label="Current channel">
+        <div class="channel-info"><span class="channel-icon" aria-hidden="true">#</span><span id="channel-name">Finding your channel…</span></div>
+        <button id="channel-toggle" class="channel-button" type="button" disabled>Pause here</button>
+      </section>
+
+      <section class="settings-card" aria-label="Translation settings">
+        <fieldset class="display-setting">
+          <legend>Show translations</legend>
+          <div class="segmented">
+            <label><input type="radio" name="display-mode" value="below" /><span>Below original</span></label>
+            <label><input type="radio" name="display-mode" value="replace" /><span>Replace text</span></label>
+          </div>
+        </fieldset>
+        <label class="setting-row" for="show-language"><span>Show detected language</span><input type="checkbox" id="show-language" class="check" /></label>
+        <label class="setting-row" for="translate-history"><span>Translate recent messages</span><input type="checkbox" id="translate-history" class="check" /></label>
+        <div class="setting-row speed-row"><label for="speed">Translation speed</label><select id="speed"><option value="fast">Fast</option><option value="gentle">Gentle</option></select></div>
+        <details class="language-settings" id="language-settings">
+          <summary><span class="language-summary-label"><span>Do not translate</span><span id="excluded-summary" class="language-summary-value">Deutsch, English</span></span><span id="excluded-count" class="language-count">2</span><svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m3 4.5 3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+          <p class="language-help" id="language-help">Messages detected as these languages stay in their original language.</p>
+          <label for="language-search" class="sr-only">Search languages by name or language code</label>
+          <input id="language-search" type="search" class="language-search" placeholder="Search languages…" autocomplete="off" spellcheck="false" aria-controls="language-list" />
+          <div id="language-list" class="language-list" role="group" aria-label="Languages to leave untranslated" aria-describedby="language-help"></div>
+          <p id="language-empty" class="language-empty" hidden>No matching languages.</p>
+          <span id="language-search-status" class="sr-only" role="status"></span>
+          <p class="language-pinned-note">English is always left as-is.</p>
+        </details>
+      </section>
+
+      <section class="activity-card" aria-label="Translation activity">
+        <div class="activity-heading"><span class="status-dot" id="status-dot" aria-hidden="true"></span><span id="activity-status" role="status">Connecting…</span><span class="live-label">THIS SESSION</span></div>
+        <div class="stats">
+          <div><strong id="stat-translated">0</strong><span>translated</span></div>
+          <div><strong id="stat-queued">0</strong><span>in queue</span></div>
+          <div><strong id="stat-latency">—</strong><span>avg. response</span></div>
+        </div>
+        <p id="service-note" class="service-note" hidden></p>
+      </section>
+
+      <div class="tools-row"><button id="test-connection" type="button" class="primary-button"><svg aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m9.2 1.8-5 6.7h3.6l-1 5.7 5-7H8.2l1-5.4Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>Test connection</button><button id="clear-cache" type="button" class="secondary-button">Clear cache</button></div>
+      <p id="action-message" class="action-message" role="status" aria-live="polite" hidden></p>
+
+      <footer>Message text is sent to Google Translate. No account, API key or subscription. Free public endpoint; availability and limits can change.</footer>
+    </main>
+  </body>
+</html>

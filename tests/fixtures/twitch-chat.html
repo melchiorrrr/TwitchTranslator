@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Twitch English · chat fixture</title>
+<style>
+* { box-sizing: border-box; } body { background:#0e0e10;color:#efeff1;font:14px/1.6 system-ui;margin:0;padding:38px; }
+main { max-width:550px; margin:auto; border:1px solid #333238;border-radius:14px;overflow:hidden;background:#18181b; }
+header { padding:18px 22px;border-bottom:1px solid #333238; } h1 { font-size:17px;margin:0; } header p {color:#a9a6b2;font-size:12px;margin:3px 0 0;}
+#chat {padding:15px 20px;} .chat-line__message {padding:9px 0;} .chat-author__display-name {color:#bd99ff;font-weight:700;} .chat-line__message--separator {margin-right:6px;} a {color:#7dd3b0;} img {width:22px;height:22px;vertical-align:middle;}
+</style></head>
+<body><main><header><h1>Stream chat</h1><p>Extension QA fixture · simulated messages</p></header><div id="chat" role="log">
+<div class="chat-line__message" data-a-target="chat-line-message" id="german"><span class="chat-author__display-name">Lena</span><span class="chat-line__message--separator">:</span><span class="text-fragment">Guten Abend zusammen, wie geht es euch?</span><img class="chat-image" alt="Kappa" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Ctext y='18' font-size='18'%3E%F0%9F%98%8E%3C/text%3E%3C/svg%3E"></div>
+<div class="chat-line__message" data-a-target="chat-line-message" id="japanese"><span class="chat-author__display-name">Haru</span><span class="chat-line__message--separator">:</span><span data-a-target="chat-line-message-body"><span class="text-fragment">今日はとても楽しいです！</span></span></div>
+<div class="chat-line__message" data-a-target="chat-line-message" id="spanish"><span class="chat-author__display-name">Lucía</span><span class="chat-line__message--separator">:</span><span class="text-fragment">¡Hola a todos! ¿Cómo están hoy?</span></div>
+<div class="chat-line__message" data-a-target="chat-line-message" id="english"><span class="chat-author__display-name">Alex</span><span class="chat-line__message--separator">:</span><span class="text-fragment">This is already English and should stay exactly the same.</span></div>
+<div class="chat-line__message" data-a-target="chat-line-message" id="emotes"><span class="chat-author__display-name">EmoteFan</span><span class="chat-line__message--separator">:</span><span class="text-fragment">KEKW LUL Kappa</span></div>
+<div class="chat-line__message" data-a-target="chat-line-message" id="link"><span class="chat-author__display-name">Pierre</span><span class="chat-line__message--separator">:</span><span class="text-fragment">Bonjour tout le monde, regardez ce lien </span><a class="link-fragment" href="https://example.com">https://example.com</a></div>
+</div></main></body></html>
